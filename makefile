@@ -9,11 +9,17 @@ build:	$(PROJECT).xcodeproj/project.pbxproj
 $(PROJECT).xcodeproj/project.pbxproj:	project.yml
 	xcodegen -c
 
-.PHONY: proj tags dap test testapp testGpxTrackLog clean
+.PHONY: proj lint tags dap test testapp testGpxTrackLog clean
 
 # force project file rebuild
 proj:
 	xcodegen
+
+lint:
+	swiftlint GeoTag Coords/Sources Exiftool/Sources GpxTrackLog/Sources \
+		ImageData/Sources Imagetool/Sources Metadata/Sources \
+		Phototool/Sources RunLogView/Sources SplitHView/Sources \
+		SplitVView/Sources
 
 tags:
 	/opt/homebrew/bin/ctags -R

@@ -175,10 +175,6 @@ targets:
         name: Build Version
         showEnvVars: NO
         basedOnDependencyAnalysis: NO
-      - path: .swiftlint.sh
-        name: Swift Lint
-        showEnvVars: NO
-        basedOnDependencyAnalysis: NO
 
   GeoTagTests:
     type: bundle.unit-test
